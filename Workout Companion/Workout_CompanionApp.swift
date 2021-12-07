@@ -26,7 +26,8 @@ struct Workout_CompanionApp: App {
             }
             .onAppear() {
                     workoutManager.requestAuthorization {
-                        workoutManager.loadWorkoutData()
+                        print("requested authorization")
+                        //workoutManager.loadWorkoutData()
                 } onError: { error in
                     if let error = error {
                         errorMesage = error.localizedDescription

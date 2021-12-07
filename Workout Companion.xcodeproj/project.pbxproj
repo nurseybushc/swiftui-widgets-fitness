@@ -108,6 +108,7 @@
 		30EBEB4826376F5500A4E9AB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		30EBEB4B26376F5500A4E9AB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		30EBEB4D26376F5500A4E9AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8416EC90275430B7009A4A88 /* Workout CompanionDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Workout CompanionDebug.entitlements"; sourceTree = "<group>"; };
 		AC1CB5E22649352000AC3CB6 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		AC1CB5E5264937D500AC3CB6 /* WIP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WIP.swift; sourceTree = "<group>"; };
 		AC7186D7264497B50084C84B /* RecentWorkoutsWidgets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentWorkoutsWidgets.swift; sourceTree = "<group>"; };
@@ -229,6 +230,7 @@
 		30EBEB4326376F5400A4E9AB /* Workout Companion */ = {
 			isa = PBXGroup;
 			children = (
+				8416EC90275430B7009A4A88 /* Workout CompanionDebug.entitlements */,
 				30EBEB4426376F5400A4E9AB /* Workout_CompanionApp.swift */,
 				3023F937263D679D00405A24 /* Models */,
 				3023F93D263D79A600405A24 /* Data */,
@@ -420,7 +422,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4WZFDA97N8;
+				DEVELOPMENT_TEAM = P47L3YKUJJ;
 				INFOPLIST_FILE = WorkoutCompanionWidget/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -428,7 +430,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "MEZ.Workout-Companion.WorkoutCompanionWidget";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.parallelones.Workout-Companion.WorkoutCompanionWidget";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
@@ -444,7 +446,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4WZFDA97N8;
+				DEVELOPMENT_TEAM = P47L3YKUJJ;
 				INFOPLIST_FILE = WorkoutCompanionWidget/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -452,7 +454,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "MEZ.Workout-Companion.WorkoutCompanionWidget";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.parallelones.Workout-Companion.WorkoutCompanionWidget";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
@@ -583,11 +585,11 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = "Workout Companion/Workout Companion.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "Workout Companion/Workout CompanionDebug.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Workout Companion/Preview Content\"";
-				DEVELOPMENT_TEAM = 4WZFDA97N8;
+				DEVELOPMENT_TEAM = P47L3YKUJJ;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "Workout Companion/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -595,7 +597,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "MEZ.Workout-Companion";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.parallelones.Workout-Companion";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
@@ -613,7 +615,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Workout Companion/Preview Content\"";
-				DEVELOPMENT_TEAM = 4WZFDA97N8;
+				DEVELOPMENT_TEAM = P47L3YKUJJ;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "Workout Companion/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -621,7 +623,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "MEZ.Workout-Companion";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.parallelones.Workout-Companion";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;

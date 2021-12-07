@@ -9,6 +9,8 @@ import SwiftUI
 import HealthKit
 
 struct MenuView: View {
+    @EnvironmentObject var workoutManager: WorkoutManager
+    
     var body: some View {
         List {
             ForEach(MenuModel.allCases) { item in
@@ -27,7 +29,7 @@ struct MenuView: View {
     private func destination(for menuItem: MenuModel) -> some View {
         switch menuItem {
         case .workout:
-            WorkoutWidgets()
+            WorkoutWidgets().environmentObject(workoutManager)
         default:
             WIP()
         }
