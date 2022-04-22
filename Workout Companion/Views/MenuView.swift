@@ -29,7 +29,7 @@ struct MenuView: View {
     private func destination(for menuItem: MenuModel) -> some View {
         switch menuItem {
         case .workout:
-            WorkoutWidgets().environmentObject(workoutManager)
+            AppWorkoutsList().environmentObject(workoutManager)
         default:
             WIP()
         }

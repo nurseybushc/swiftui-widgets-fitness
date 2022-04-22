@@ -18,22 +18,24 @@ struct Workout_CompanionApp: App {
     var body: some Scene {
         WindowGroup {
             NavigationView {
-                MenuView()
+                AppWorkoutsList()
                     .environmentObject(workoutManager)
             }
             .alert(isPresented: $showingAlert) {
                 Alert(title: Text("Something went wrong..."), message: Text(errorMesage), dismissButton: .default(Text("Ok")))
             }
             .onAppear() {
-                    workoutManager.requestAuthorization {
-                        print("requested authorization")
-                        //workoutManager.loadWorkoutData()
-                } onError: { error in
-                    if let error = error {
-                        errorMesage = error.localizedDescription
-                    }
-                    showingAlert = true
-                }
+                
+                workoutManager.requestAuthorization(onSuccess: {
+                    workoutManager.loadWorkoutData()
+                }, onError: {
+                    error in
+                        if let error = error {
+                            errorMesage = error.localizedDescription
+                        }
+                        showingAlert = true
+                })
+                
             }
         }
     }
