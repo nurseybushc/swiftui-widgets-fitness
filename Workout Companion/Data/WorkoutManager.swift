@@ -10,7 +10,6 @@ import HealthKit
 import Combine
 import MapKit
 
-
 class WorkoutManager: NSObject, ObservableObject {
     
     @Published var weekWorkoutModel = WeekWorkoutModel(workouts: [])
@@ -19,7 +18,8 @@ class WorkoutManager: NSObject, ObservableObject {
     @Published var allRunningWorkouts: [HKWorkout] = []
     
     typealias DictAppWorkouts = [String: AppWorkoutModel]
-    @Published var appWorkouts: DictAppWorkouts = [:]
+//    @Published var appWorkouts: DictAppWorkouts = [:]
+    @Published var appWorkouts: DictAppWorkouts
     private var hkWorkouts: [String: HKWorkout] = [:]
     
     private var healthStore: HKHealthStore?
@@ -29,12 +29,14 @@ class WorkoutManager: NSObject, ObservableObject {
         weekWorkoutModel: WeekWorkoutModel = WeekWorkoutModel(workouts: []),
         mapWorkoutModel: MapWorkoutModel? = nil,
         recentWorkouts: [HKWorkout] = [],
-        allRunningWorkouts: [HKWorkout] = []) {
+        allRunningWorkouts: [HKWorkout] = [],
+        appWorkouts: DictAppWorkouts = [:]) {
             
             self.weekWorkoutModel = weekWorkoutModel
             self.mapWorkoutModel = mapWorkoutModel
             self.recentWorkouts = recentWorkouts
             self.allRunningWorkouts = allRunningWorkouts
+            self.appWorkouts = appWorkouts
             
             if HKHealthStore.isHealthDataAvailable() {
                 healthStore = HKHealthStore()
@@ -61,6 +63,8 @@ class WorkoutManager: NSObject, ObservableObject {
             
             let jsonData = try JSONEncoder().encode(appWorkouts)
             let jsonString = String(data: jsonData, encoding: .utf8)!
+            
+            print(jsonString)
             
             print(NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).last)
             
@@ -105,26 +109,31 @@ class WorkoutManager: NSObject, ObservableObject {
         }
     }
     
-    func loadWorkoutData() {
+//    @MainActor
+    func loadWorkoutData(force: Bool = false) {
         print("loadWorkoutData")
-        latestMapWorkout()
-        latestWorkoutWeekDays()
-        latestWorkouts()
+//        latestMapWorkout()
+//        latestWorkoutWeekDays()
+//        latestWorkouts()
         let foundFile = checkFile()
-        if !foundFile {
+        if !foundFile || force {
             getAllRunningWorkouts()
         } else {
             loadFromFile()
         }
     }
     
-    func loadFromFile(){
-        
+//    @MainActor
+    func loadFromFile() {
         do {
             let documentDirectory = try FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
             let fileUrl = documentDirectory.appendingPathComponent("appWorkouts.json")
             let data = try Data(contentsOf: fileUrl)
             let decoder = JSONDecoder()
+            
+//            try await MainActor.run {
+//                appWorkouts = try decoder.decode(DictAppWorkouts.self, from: data)
+//            }
             appWorkouts = try decoder.decode(DictAppWorkouts.self, from: data)
 
             print("loadFromFile appWorkouts.count \(appWorkouts.count)")
@@ -258,7 +267,6 @@ class WorkoutManager: NSObject, ObservableObject {
             executionsDoneBatch(startIndex: startIndex, endIndex: newEndIndex)
         }
     }
-    
     
     func getStepsForWorkout3(wk: HKWorkout, queue: DispatchQueue, dispatchGroup: DispatchGroup){
         dispatchGroup.enter()
@@ -428,7 +436,6 @@ class WorkoutManager: NSObject, ObservableObject {
         
         HKHealthStore().execute(query)
     }
-    
     
     func getAppleExeciseTimeForWorkout(wk: HKWorkout, queue: DispatchQueue, dispatchGroup: DispatchGroup){
         dispatchGroup.enter()

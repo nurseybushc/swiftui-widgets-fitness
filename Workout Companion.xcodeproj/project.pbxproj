@@ -41,6 +41,15 @@
 		30EBEB4C26376F5500A4E9AB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30EBEB4B26376F5500A4E9AB /* Preview Assets.xcassets */; };
 		845BF0C1280B813200E7825F /* AppWorkoutModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F1649B280B33EA00E8B6C4 /* AppWorkoutModel.swift */; };
 		845BF0C32810D6E900E7825F /* AppWorkoutsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845BF0C22810D6E900E7825F /* AppWorkoutsList.swift */; };
+		84D3D1FE28171DD700BFC19A /* AppWorkoutsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845BF0C22810D6E900E7825F /* AppWorkoutsList.swift */; };
+		84D3D1FF28171E5A00BFC19A /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EBEB4626376F5400A4E9AB /* MenuView.swift */; };
+		84D3D20028171E6200BFC19A /* WorkoutWidgets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3086E432263DDB8B00843006 /* WorkoutWidgets.swift */; };
+		84D3D20128171E6500BFC19A /* MapWorkoutWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307B7A14263AA3D300A7F003 /* MapWorkoutWidget.swift */; };
+		84D3D20228171E6F00BFC19A /* MenuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3086E434263DDE8600843006 /* MenuModel.swift */; };
+		84D3D204281C7B0400BFC19A /* WorkoutService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D3D203281C7B0400BFC19A /* WorkoutService.swift */; };
+		84D3D205281C7B0400BFC19A /* WorkoutService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D3D203281C7B0400BFC19A /* WorkoutService.swift */; };
+		84D3D207281C819B00BFC19A /* AppWorkoutListNew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D3D206281C819B00BFC19A /* AppWorkoutListNew.swift */; };
+		84D3D208281C819B00BFC19A /* AppWorkoutListNew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D3D206281C819B00BFC19A /* AppWorkoutListNew.swift */; };
 		84F1649C280B33EA00E8B6C4 /* AppWorkoutModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F1649B280B33EA00E8B6C4 /* AppWorkoutModel.swift */; };
 		AC1CB5E32649352000AC3CB6 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1CB5E22649352000AC3CB6 /* Constants.swift */; };
 		AC1CB5E42649352000AC3CB6 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1CB5E22649352000AC3CB6 /* Constants.swift */; };
@@ -113,6 +122,8 @@
 		30EBEB4D26376F5500A4E9AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8416EC90275430B7009A4A88 /* Workout CompanionDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Workout CompanionDebug.entitlements"; sourceTree = "<group>"; };
 		845BF0C22810D6E900E7825F /* AppWorkoutsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWorkoutsList.swift; sourceTree = "<group>"; };
+		84D3D203281C7B0400BFC19A /* WorkoutService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutService.swift; sourceTree = "<group>"; };
+		84D3D206281C819B00BFC19A /* AppWorkoutListNew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWorkoutListNew.swift; sourceTree = "<group>"; };
 		84F1649B280B33EA00E8B6C4 /* AppWorkoutModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWorkoutModel.swift; sourceTree = "<group>"; };
 		AC1CB5E22649352000AC3CB6 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		AC1CB5E5264937D500AC3CB6 /* WIP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WIP.swift; sourceTree = "<group>"; };
@@ -193,6 +204,7 @@
 				AC7186D7264497B50084C84B /* RecentWorkoutsWidgets.swift */,
 				AC1CB5E5264937D500AC3CB6 /* WIP.swift */,
 				845BF0C22810D6E900E7825F /* AppWorkoutsList.swift */,
+				84D3D206281C819B00BFC19A /* AppWorkoutListNew.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -201,6 +213,7 @@
 			isa = PBXGroup;
 			children = (
 				304917FC26387F7600AB1C1B /* WorkoutManager.swift */,
+				84D3D203281C7B0400BFC19A /* WorkoutService.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -364,13 +377,18 @@
 				300B51182640AFB4003AD7E8 /* WeekWorkoutModel.swift in Sources */,
 				AC1CB5E42649352000AC3CB6 /* Constants.swift in Sources */,
 				845BF0C1280B813200E7825F /* AppWorkoutModel.swift in Sources */,
+				84D3D1FE28171DD700BFC19A /* AppWorkoutsList.swift in Sources */,
 				AC7186D9264497B50084C84B /* RecentWorkoutsWidgets.swift in Sources */,
 				300B511B2640B01A003AD7E8 /* MKCoordinateRegion+extensions.swift in Sources */,
 				300B51092640AD22003AD7E8 /* WorkoutCompanionWidget.swift in Sources */,
+				84D3D1FF28171E5A00BFC19A /* MenuView.swift in Sources */,
+				84D3D20228171E6F00BFC19A /* MenuModel.swift in Sources */,
 				300B511D2640B01A003AD7E8 /* Date+extensions.swift in Sources */,
+				84D3D208281C819B00BFC19A /* AppWorkoutListNew.swift in Sources */,
 				AC7186DC26449D5F0084C84B /* HKWorkoutActivityType+extensions.swift in Sources */,
 				300B511A2640AFB4003AD7E8 /* WorkoutDayModel.swift in Sources */,
 				300B510E2640AD25003AD7E8 /* WorkoutCompanionWidget.intentdefinition in Sources */,
+				84D3D205281C7B0400BFC19A /* WorkoutService.swift in Sources */,
 				300B51192640AFB4003AD7E8 /* MapWorkoutModel.swift in Sources */,
 				ACDD7AAB2645EF8100D67F68 /* HKWorkout+extensions.swift in Sources */,
 				ACDD7AA52645D2C300D67F68 /* Text+extensions.swift in Sources */,
@@ -378,6 +396,8 @@
 				ACDD7AA82645D38300D67F68 /* WorkoutRowModel.swift in Sources */,
 				304A9CD22640B6CE00E883F8 /* WorkoutManager.swift in Sources */,
 				300B511C2640B01A003AD7E8 /* View+extensions.swift in Sources */,
+				84D3D20028171E6200BFC19A /* WorkoutWidgets.swift in Sources */,
+				84D3D20128171E6500BFC19A /* MapWorkoutWidget.swift in Sources */,
 				AC1CB5E7264937D500AC3CB6 /* WIP.swift in Sources */,
 				300B51172640AF9E003AD7E8 /* WeekWorkoutsWidget.swift in Sources */,
 			);
@@ -397,9 +417,11 @@
 				300C4EF826395A9F007F60CC /* WeekWorkoutsWidget.swift in Sources */,
 				AC7186D8264497B50084C84B /* RecentWorkoutsWidgets.swift in Sources */,
 				ACDD7AA42645D2C000D67F68 /* Text+extensions.swift in Sources */,
+				84D3D207281C819B00BFC19A /* AppWorkoutListNew.swift in Sources */,
 				30EBEB4526376F5400A4E9AB /* Workout_CompanionApp.swift in Sources */,
 				307B7A1B263AB7E300A7F003 /* MKCoordinateRegion+extensions.swift in Sources */,
 				AC1CB5E32649352000AC3CB6 /* Constants.swift in Sources */,
+				84D3D204281C7B0400BFC19A /* WorkoutService.swift in Sources */,
 				AC7186DB26449D5F0084C84B /* HKWorkoutActivityType+extensions.swift in Sources */,
 				3023F93F263D79FF00405A24 /* MapWorkoutModel.swift in Sources */,
 				3086E435263DDE8600843006 /* MenuModel.swift in Sources */,
@@ -434,7 +456,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P47L3YKUJJ;
 				INFOPLIST_FILE = WorkoutCompanionWidget/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -458,7 +480,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P47L3YKUJJ;
 				INFOPLIST_FILE = WorkoutCompanionWidget/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -524,7 +546,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -579,7 +601,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -602,7 +624,7 @@
 				DEVELOPMENT_TEAM = P47L3YKUJJ;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "Workout Companion/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -628,7 +650,7 @@
 				DEVELOPMENT_TEAM = P47L3YKUJJ;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "Workout Companion/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

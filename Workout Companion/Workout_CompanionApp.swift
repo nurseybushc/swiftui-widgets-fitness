@@ -12,30 +12,30 @@ struct Workout_CompanionApp: App {
     
     @State private var showingAlert = false
     @State private var errorMesage = ""
-
-    @StateObject var workoutManager = WorkoutManager()
-
+    
+    @StateObject var workoutService = WorkoutService()
+    
     var body: some Scene {
         WindowGroup {
             NavigationView {
-                AppWorkoutsList()
-                    .environmentObject(workoutManager)
+                AppWorkoutsListNew()
+                    .environmentObject(workoutService)
             }
             .alert(isPresented: $showingAlert) {
                 Alert(title: Text("Something went wrong..."), message: Text(errorMesage), dismissButton: .default(Text("Ok")))
             }
-            .onAppear() {
-                
-                workoutManager.requestAuthorization(onSuccess: {
-                    workoutManager.loadWorkoutData()
-                }, onError: {
+            
+            .task {
+                workoutService.requestAuthorization(onSuccess:
+                { Task {
+                    try? await workoutService.fetchWorkouts(force: true)
+                }}, onError: {
                     error in
-                        if let error = error {
-                            errorMesage = error.localizedDescription
-                        }
-                        showingAlert = true
+                    if let error = error {
+                        errorMesage = error.localizedDescription
+                    }
+                    showingAlert = true
                 })
-                
             }
         }
     }

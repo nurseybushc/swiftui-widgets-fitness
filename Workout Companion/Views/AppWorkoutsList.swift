@@ -10,13 +10,27 @@ import SwiftUI
 
 struct AppWorkoutsList: View {
     @EnvironmentObject var workoutManager: WorkoutManager
+    typealias DictAppWorkouts = [String: AppWorkoutModel]
+    let workouts: DictAppWorkouts
     
     var body: some View {
         VStack{
-            Text("\(workoutManager.appWorkouts.count) workouts")
-            List{
-                ForEach(Array(workoutManager.appWorkouts.keys), id: \.self) { key in
-                    AppWorkoutRow(appWorkout: workoutManager.appWorkouts[key]!)
+            Text("\(workouts.count) workouts")
+            if #available(iOS 15.0, *) {
+                List{
+                    ForEach(Array(workouts.keys), id: \.self) { key in
+                        AppWorkoutRow(appWorkout: workouts[key]!)
+                    }
+                }
+                .refreshable {
+                    workoutManager.loadWorkoutData(force: true)
+                }
+            } else {
+                // Fallback on earlier versions
+                List{
+                    ForEach(Array(workouts.keys), id: \.self) { key in
+                        AppWorkoutRow(appWorkout: workouts[key]!)
+                    }
                 }
             }
         }
